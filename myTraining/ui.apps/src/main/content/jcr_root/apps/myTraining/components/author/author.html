@@ -1,0 +1,5 @@
+<div class="author-component" data-sly-use.authorModel="com.myTraining.core.models.AuthorModel">
+    <h2>Author Name: ${properties.authorName}</h2>
+    <p>Author BIO: ${properties.authorBio}</p>
+    <p><strong>Author Date of Birth:</strong> ${'dd MMMM, YYYY' @ format=properties.dob,type='datetime'} 
+</div>
