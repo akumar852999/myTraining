@@ -1,0 +1,15 @@
+{
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:createdBy": "admin",
+    "authorName": "Amit",
+    "jcr:lastModifiedBy": "admin",
+    "jcr:created": "Thu Mar 06 2025 21:13:46 GMT+0530",
+    "dob": "Wed Mar 05 2025 00:00:00 GMT+0530",
+    "books": [
+        "Acoustic Rooster",
+        "history"
+    ],
+    "jcr:lastModified": "Thu Mar 06 2025 21:14:14 GMT+0530",
+    "sling:resourceType": "myTraining/components/author",
+    "authorBio": "Author BioAuthor BioAuthor BioAuthor BioAuthor BioAuthor Bio"
+}

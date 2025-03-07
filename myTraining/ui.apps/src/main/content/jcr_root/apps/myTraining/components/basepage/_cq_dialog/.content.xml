@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Page"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[cq.common.wcm,cq.siteadmin.admin.properties,cq.wcm.msm.properties,granite.contexthub.configuration]"
+    mode="edit">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container"
+        class="cq-dialog-content-page">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                granite:class="cq-siteadmin-admin-properties-tabs"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true"
+                size="L">
+                <items jcr:primaryType="nt:unstructured">
+                    <globalproperties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Global properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <ogproperties
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Please enter Og Image"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <ogImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Select the image"
+                                                fieldLabel="Og Image"
+                                                name="./ogImage"
+                                                rootpath="/content/dam"/>
+                                            <defaultArticleImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Select the Default Article image"
+                                                fieldLabel="Default Article Image"
+                                                name="./defaultArticleImage"/>
+                                            <defaultReadMore
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter default read more button cta label"
+                                                fieldLabel="Default Read More Cta Label"
+                                                name="./defaultReadMore"/>
+                                        </items>
+                                    </ogproperties>
+                                </items>
+                            </column>
+                        </items>
+                    </globalproperties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

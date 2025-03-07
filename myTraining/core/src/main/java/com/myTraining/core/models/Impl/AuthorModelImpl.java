@@ -1,8 +1,5 @@
 package com.myTraining.core.models.Impl;
 
-
-import com.day.cq.wcm.api.Page;
-import com.day.cq.wcm.api.PageManager;
 import com.myTraining.core.models.AuthorModel;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
@@ -11,8 +8,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
-import java.util.Optional;
+import java.util.List;
 
 @Model(adaptables = Resource.class, adapters = AuthorModel.class)
 public class AuthorModelImpl implements AuthorModel {
@@ -28,25 +27,34 @@ public class AuthorModelImpl implements AuthorModel {
     @ValueMapValue
     private Date dob;
 
+    @ValueMapValue
+    private List<String> books;
+
+
+
+    public List<String> getBooks() {
+        if(books!=null){
+            return new ArrayList<String>(books);
+        }else{
+            return Collections.emptyList();
+        }
+    }
+
     @PostConstruct
     protected void init() {
-        LOG.info("------------inside Author model init method----------------"+authorName);
+        LOG.info("------------inside Author model init method----------------" + authorName);
 
     }
 
-
-    @Override
     public String getAuthorName() {
         return authorName;
     }
 
-    @Override
-    public String getBio() {
+    public String getAuthorBio() {
         return authorBio;
     }
 
-    @Override
-    public Date getDOB() {
+    public Date getDob() {
         return dob;
     }
 }

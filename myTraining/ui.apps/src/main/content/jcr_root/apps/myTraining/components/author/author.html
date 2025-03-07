@@ -1,5 +1,12 @@
+<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='myTraining.authorcomponent', async=true}"/>
+</sly>
 <div class="author-component" data-sly-use.authorModel="com.myTraining.core.models.AuthorModel">
-    <h2>Author Name: ${properties.authorName}</h2>
-    <p>Author BIO: ${properties.authorBio}</p>
-    <p><strong>Author Date of Birth:</strong> ${'dd MMMM, YYYY' @ format=properties.dob,type='datetime'} 
+    <h2>Author Name: ${authorModel.authorName}</h2>
+    <p>Author BIO: ${authorModel.authorBio}</p>
+    <p><strong>Author Date of Birth:</strong> ${'dd MMMM, YYYY' @ format=authorModel.dob,type='datetime'}
+    <div data-sly-list.item="${authorModel.books}">
+    <h2> Books By Author</h2>
+    <p>${item}</p>
+
 </div>

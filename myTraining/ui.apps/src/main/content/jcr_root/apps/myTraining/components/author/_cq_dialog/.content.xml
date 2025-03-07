@@ -32,6 +32,16 @@
                         maxDate="today"
                         name="./dob"
                         storedValue="DD MMMM, YYYY"/>
+                    <books
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                            composite="{Boolean}false"
+                            fieldLabel="Author's Books">
+                        <field
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                name="./books"/>
+                    </books>
                 </items>
             </column>
         </items>

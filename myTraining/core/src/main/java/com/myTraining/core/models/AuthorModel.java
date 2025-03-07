@@ -1,9 +1,11 @@
 package com.myTraining.core.models;
 
 import java.util.Date;
+import java.util.List;
 
 public interface AuthorModel {
     String getAuthorName();
-    String getBio();
-    Date getDOB();
+   String getAuthorBio();
+    Date getDob();
+    List<String> getBooks();
 }

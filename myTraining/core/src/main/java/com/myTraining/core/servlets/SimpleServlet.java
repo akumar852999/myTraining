@@ -16,6 +16,7 @@
 package com.myTraining.core.servlets;
 
 import com.day.cq.commons.jcr.JcrConstants;
+import com.myTraining.core.services.SimpleInt;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.resource.Resource;
@@ -24,7 +25,10 @@ import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.propertytypes.ServiceDescription;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
@@ -44,12 +48,18 @@ import java.io.IOException;
 @ServiceDescription("Simple Demo Servlet")
 public class SimpleServlet extends SlingSafeMethodsServlet {
 
+   // @Reference
+    //SimpleInt si;
     private static final long serialVersionUID = 1L;
-
+   // private final Logger logger = LoggerFactory.getLogger(SimpleServlet.class);
     @Override
     protected void doGet(final SlingHttpServletRequest req,
             final SlingHttpServletResponse resp) throws ServletException, IOException {
+       //String helloWorld= si.getHelloWorld();
         final Resource resource = req.getResource();
+       // logger.info("-------inside doget method by resource Type servlet method- and hello world---"+helloWorld);
+
+
         resp.setContentType("text/plain");
         resp.getWriter().write("Title = " + resource.getValueMap().get(JcrConstants.JCR_TITLE));
     }
