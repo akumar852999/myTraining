@@ -1,12 +1,29 @@
 <sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
     <sly data-sly-call="${clientlib.all @ categories='myTraining.authorcomponent', async=true}"/>
 </sly>
+
+
 <div class="author-component" data-sly-use.authorModel="com.myTraining.core.models.AuthorModel">
+    <div>
+        <img src="${authorModel.authorImg}" alt="${authorModel.authorName}">
+    </div>
+    <div class="apii">${authorModel.fetchApi}</div>
     <h2>Author Name: ${authorModel.authorName}</h2>
     <p>Author BIO: ${authorModel.authorBio}</p>
     <p><strong>Author Date of Birth:</strong> ${'dd MMMM, YYYY' @ format=authorModel.dob,type='datetime'}
     <div data-sly-list.item="${authorModel.books}">
-    <h2> Books By Author</h2>
-    <p>${item}</p>
+        <h2> Books By Author</h2>
+        <p>${item}</p>
 
+        <div class="${properties.fetchDataFromApi}">
+
+        </div>
+
+
+        <div class="author-container">
+
+        </div>
+        <button id="load-more" data-cards-to-show="${authorModel.loadMoreValue}">${authorModel.loadMoreCtaName}</button>
+
+    </div>
 </div>

@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
 
     @Override
     public String getAuthorId() {
-        return configuration.getAuthorId();
+        return configuration.getAuthorId()+"helo";
     }
 
     @Override

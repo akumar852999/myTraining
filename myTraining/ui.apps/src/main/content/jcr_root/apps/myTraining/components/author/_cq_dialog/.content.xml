@@ -23,6 +23,12 @@
                         fieldDescription="Provide some detail about article"
                         fieldLabel="Author Bio"
                         name="./authorBio"/>
+                    <authorImg
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="Select Author image"
+                            fieldLabel="Author Image"
+                            name="./authorImg"/>
                     <dob
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
@@ -32,6 +38,26 @@
                         maxDate="today"
                         name="./dob"
                         storedValue="DD MMMM, YYYY"/>
+                    <fetchDataFromApi
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            fieldDescription="Fetch data from Api"
+                            text="Fetch data from Api? if yes please check the box below"
+                            name="./fetchDataFromApi"
+                            uncheckedValue="no"
+                            value="yes"/>
+                    <loadMoreValue
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="Load More Card Value"
+                            fieldLabel="Load More Card Value"
+                            name="./loadMoreValue"/>
+                    <loadMoreCtaName
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="Provide Load More Cta Name"
+                            fieldLabel="Load More Cta Name"
+                            name="./loadMoreCtaName"/>
                     <books
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/form/multifield"

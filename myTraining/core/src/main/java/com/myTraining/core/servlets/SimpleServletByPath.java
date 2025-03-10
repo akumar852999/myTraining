@@ -15,19 +15,15 @@
  */
 package com.myTraining.core.servlets;
 
-import com.day.cq.commons.jcr.JcrConstants;
 import com.myTraining.core.services.CustomServiceInt;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.servlets.HttpConstants;
-import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
-import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
 import org.osgi.framework.Constants;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.component.propertytypes.ServiceDescription;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,10 +34,10 @@ import java.io.IOException;
 @Component(service=Servlet.class,
         property={
                 Constants.SERVICE_DESCRIPTION + "=Simple Demo Servlet by path",
-                "sling.servlet.methods=" + HttpConstants.METHOD_POST,
+                "sling.servlet.methods=" + HttpConstants.METHOD_GET,
                 "sling.servlet.paths="+ "/bin/customServletByPath"
         })
-public class SimpleServletByPath extends SlingAllMethodsServlet {
+public class SimpleServletByPath extends SlingSafeMethodsServlet {
 
     private static final long serialVersionUID = 1L;
     private final Logger logger = LoggerFactory.getLogger(SimpleServletByPath.class);
@@ -49,12 +45,13 @@ public class SimpleServletByPath extends SlingAllMethodsServlet {
     CustomServiceInt cs;
 
 
-    protected void doPost(final SlingHttpServletRequest req,
+    protected void doGet(final SlingHttpServletRequest req,
             final SlingHttpServletResponse resp) throws ServletException, IOException {
         logger.info("-------inside doget method by path servlet method----");
         final Resource resource = req.getResource();
         resp.setContentType("text/plain");
         String userName= cs.getUserName();
+        logger.info("-------custom configs data in servlet logs----"+userName);
         resp.getWriter().write("User Name ="+userName);
     }
 }

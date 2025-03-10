@@ -42,25 +42,29 @@ import java.io.IOException;
  */
 @Component(service = { Servlet.class })
 @SlingServletResourceTypes(
-        resourceTypes="myTraining/components/page",
+        resourceTypes="myTraining/components/basepage",
         methods=HttpConstants.METHOD_GET,
         extensions="txt")
 @ServiceDescription("Simple Demo Servlet")
 public class SimpleServlet extends SlingSafeMethodsServlet {
 
-   // @Reference
-    //SimpleInt si;
+    @Reference
+    SimpleInt si;
+
     private static final long serialVersionUID = 1L;
-   // private final Logger logger = LoggerFactory.getLogger(SimpleServlet.class);
+  private final Logger logger = LoggerFactory.getLogger(SimpleServlet.class);
     @Override
     protected void doGet(final SlingHttpServletRequest req,
             final SlingHttpServletResponse resp) throws ServletException, IOException {
-       //String helloWorld= si.getHelloWorld();
+       String helloWorld= si.getHelloWorld();
         final Resource resource = req.getResource();
-       // logger.info("-------inside doget method by resource Type servlet method- and hello world---"+helloWorld);
+      logger.info("-------inside doget method by resource Type servlet method- and hello world---");
 
-
+       String str=si.getHelloWorld();
         resp.setContentType("text/plain");
         resp.getWriter().write("Title = " + resource.getValueMap().get(JcrConstants.JCR_TITLE));
+        logger.info("-------inside resourceType servlet---"+str);
+      resp.getWriter().write("hello service"+str);
+
     }
 }

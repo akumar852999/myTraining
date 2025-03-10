@@ -2,7 +2,7 @@ package com.myTraining.core.services;
 import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
-@ObjectClassDefinition(name = "Custom Service Configuration", description = "Service Configuration")
+@ObjectClassDefinition(name = "Custom Service Configuration 123", description = "Service Configuration")
 public @interface CustomConfig {
 
     @AttributeDefinition(name = "Author Id", description = "Author id")
@@ -16,4 +16,6 @@ public @interface CustomConfig {
 
     @AttributeDefinition(name = "UserPassword", description = "UserPassword")
     String getUserPassword();
+
+
 }

@@ -56,10 +56,10 @@ class HelloWorldModelTest {
     @Test
     void testGetMessage() throws Exception {
         // some very basic junit tests
-        String msg = "hello";//hello.getMessage();
+        String msg = hello.getMessage();
         assertNotNull(msg);
-       // assertTrue(StringUtils.contains(msg, resource.getResourceType()));
-        //assertTrue(StringUtils.contains(msg, page.getPath()));
+       assertTrue(StringUtils.contains(msg, resource.getResourceType()));
+        assertTrue(StringUtils.contains(msg, page.getPath()));
     assertEquals("hello",msg);
 
     }

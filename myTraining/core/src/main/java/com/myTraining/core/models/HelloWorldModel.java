@@ -40,6 +40,7 @@ public class HelloWorldModel {
     @Default(values="No resourceType")
     protected String resourceType;
 
+
     @SlingObject
     private Resource currentResource;
     @SlingObject
