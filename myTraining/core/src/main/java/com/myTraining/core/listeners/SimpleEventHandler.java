@@ -1,4 +1,5 @@
 /*
+
 package com.myTraining.core.listeners;
 
 import org.apache.sling.api.resource.ResourceResolver;
@@ -43,6 +44,7 @@ public class SimpleEventHandler implements EventHandler {
             if (session != null && session.nodeExists(resourcePath)) {
                 Node node = session.getNode(resourcePath);
                 LOGGER.info("--------------Node Type: {}", node.getPrimaryNodeType().getName());
+                LOGGER.info("--------------Node Name: {}", node.getName());
             }
         } catch (RepositoryException e) {
             LOGGER.error("--------------Error accessing JCR Node: ", e);
@@ -51,4 +53,5 @@ public class SimpleEventHandler implements EventHandler {
         }
     }
 }
+
 */
